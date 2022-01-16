@@ -5,14 +5,17 @@ class SpotifyAPI
   include Singleton
 
   def list_artist_albums(artist_id)
+    # https://developer.spotify.com/documentation/web-api/reference/#/operations/get-an-albums-tracks
     get_request "/v1/artists/#{artist_id}/albums?limit=50"
   end
 
   def list_album_tracks(album_id)
+    # https://developer.spotify.com/documentation/web-api/reference/#/operations/get-an-artists-albums
     get_request "/v1/albums/#{album_id}/tracks?limit=50"
   end
 
   def find_artist(artist_name)
+    # https://developer.spotify.com/documentation/web-api/reference/#/operations/search
     query_string = "type=artist&limit=1&offset=0&q=#{artist_name}"
     get_request "/v1/search?#{query_string}"
   end
