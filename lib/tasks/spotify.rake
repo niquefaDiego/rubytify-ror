@@ -109,14 +109,14 @@ def import_artist(artist_name)
   }
   artist = Artist.find_by(spotify_id: artist_spotify_id)
   if artist == nil then
-    artist = Artist.create artist_data
+    artist = Artist.create! artist_data
   else
     artist.update! artist_data
   end
   artist_hash['genres'].each do |genre|
     artist_genre = artist.artist_genres.find_by(genre: genre)
     if artist_genre == nil then
-      artist.artist_genres.create(genre: genre)
+      artist.artist_genres.create!(genre: genre)
     end
   end
   artist
@@ -139,7 +139,7 @@ def import_album_songs(album)
 
     song = Song.find_by(spotify_id: song_spotify_id)
     if song == nil then
-      song = Song.create song_data
+      song = Song.create! song_data
     else
       song.update! song_data
     end
@@ -162,13 +162,13 @@ def import_artist_albums(artist)
     }
     album = Album.find_by(spotify_id: album_spotify_id)
     if album == nil then
-      album = Album.create album_data
+      album = Album.create! album_data
     else
       album.update! album_data
     end
     artist_album = ArtistAlbum.find_by(artist_id: artist.id, album_id: album.id)
     if artist_album == nil then
-      artist_album = ArtistAlbum.create(artist_id: artist.id, album_id: album.id)
+      artist_album = ArtistAlbum.create!(artist_id: artist.id, album_id: album.id)
     end
     import_album_songs album
   end
