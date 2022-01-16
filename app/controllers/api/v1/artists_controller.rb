@@ -3,10 +3,10 @@ module Api
     class ArtistsController < ApplicationController
       def list
         all_artists = Artist.order("popularity DESC")
-          .select(:id, :name, :image_url, :artist_genres, :popularity, :spotify_url)
+          .select(:spotify_id, :name, :image_url, :artist_genres, :popularity, :spotify_url)
           .all.map do |artist|
           {
-            id: artist.id,
+            id: artist.spotify_id,
             name: artist.name,
             image: artist.image_url,
             genres: artist.artist_genres.map { |x| x.genre },
@@ -18,11 +18,11 @@ module Api
       end
 
       def list_albums
-        artist = Artist.find(params[:id])
-        all_artist_albums = artist.albums.all.select(:id, :name, :image_url, :spotify_url, :total_tracks)
+        artist = Artist.find_by spotify_id: params[:id]
+        all_artist_albums = artist.albums.all.select(:spotify_id, :name, :image_url, :spotify_url, :total_tracks)
         all_artist_albums = all_artist_albums.map do |album|
           {
-            id: album.id,
+            id: album.spotify_id,
             name: album.name,
             image: album.image_url,
             spotify_url: album.spotify_url,
