@@ -26,10 +26,3 @@ Documentation: https://developer.spotify.com/documentation/web-api/reference
 ## Comments
 
 One could use this instead: https://github.com/guilhermesad/rspotify
-
-## Generating models
-
-bin/rails generate model Artist name:string image_url:text genres:string popularity:integer:index spotify_url:text spotify_id:string:uniq 
-bin/rails generate model Album artist:references name:string image_url:text spotify_url:text total_tracks:integer spotify_id:string:uniq
-bin/rails generate model Song album:references name:string spotify_url:text preview_url:text duration_ms:integer explicit:boolean spotify_id:string:uniq
-bin/rails generate model SongGenre song:references genre:string:index

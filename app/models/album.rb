@@ -1,4 +1,4 @@
 class Album < ApplicationRecord
-  belongs_to :artist
-  serialize :genres, Array
+  has_many :artist_albums
+  has_many :artists, through: :artist_albums
 end
