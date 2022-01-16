@@ -17,7 +17,8 @@ class SpotifyAPI
   def find_artist(artist_name)
     # https://developer.spotify.com/documentation/web-api/reference/#/operations/search
     query_string = "type=artist&limit=1&offset=0&q=#{artist_name}"
-    get_request "/v1/search?#{query_string}"
+    search_response = get_request "/v1/search?#{query_string}"
+    search_response['artists']['items'][0]
   end
 
   private
@@ -60,20 +61,33 @@ class SpotifyAPI
 end
 
 def import_artist(artist_name)
-  puts "Importing spotify data for artist: #{artist_name}"
   spotify = SpotifyAPI.instance
-  artist = spotify.find_artist artist_name
-  puts JSON.pretty_generate(artist)
+  artist_hash = spotify.find_artist artist_name
+  artist_spotify_id = artist_hash['id']
+  artist = Artist.find_by(spotify_id: artist_spotify_id)
+  artist_data = {
+    name: artist_hash['name'],
+    image_url: artist_hash['images'][0]['url'],
+    genres: artist_hash['genres'],
+    popularity: artist_hash['popularity'],
+    spotify_url: artist_hash['external_urls']['spotify'],
+    spotify_id: artist_spotify_id
+  }
+  if artist == nil then
+    artist = Artist.create(artist_data)
+  else
+    artist = Artist.update(artist_data.except :spotify_id)
+  end
+  artist
 end
 
 namespace :spotify do
-  task :import do
+  task :import => :environment do
     env_file = File.join(Rails.root, 'lib', 'tasks', 'spotify_artists.yml')
-    artists = YAML.load(File.open(env_file))['artists']
-    import_artist artists[0]
-    # artists.each do |artist|
-    #   import_artist artist
-    # end
+    artists_names = YAML.load(File.open(env_file))['artists']
+    artists_names.each do |artist_name|
+      import_artist artist_name
+    end
   end
 end
 
