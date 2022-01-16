@@ -1,7 +1,5 @@
 # Rubytify
 
-## Dependencies
-
 ### Required environment variables:
 
 The following envinronment variables should be set:
@@ -13,9 +11,16 @@ SPOTIFY_API_URL=https://api.spotify.com
 SPOTIFY_AUTH_ENDPOINT_URL=https://accounts.spotify.com/api/token
 ```
 
-## Spotify
+## Spotify integration
 
-Documentation: https://developer.spotify.com/documentation/web-api/reference
+
+To import spotify data for the albums, tracks and genres of the artists in `/lib/tasks/spotify_artists.ytml` run:
+
+```
+rake spotify:import
+```
+
+Spotify API aocumentation: https://developer.spotify.com/documentation/web-api/reference
 
 ## Instructions
 
