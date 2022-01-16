@@ -2,7 +2,9 @@ module Api
   module V1
     class ArtistsController < ApplicationController
       def list
-        all_artists = Artist.order("popularity DESC").all.map do |artist|
+        all_artists = Artist.order("popularity DESC")
+          .select(:id, :name, :image_url, :artist_genres, :popularity, :spotify_url)
+          .all.map do |artist|
           {
             id: artist.id,
             name: artist.name,
