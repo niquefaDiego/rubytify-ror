@@ -1,0 +1,17 @@
+version: '3'
+
+volumes:
+  postgres_data:
+    driver: local
+
+services:
+  postgres:
+    image: postgres:13
+    volumes:
+      - './docker/docker-postgresql-multiple-databases:/docker-entrypoint-initdb.d'
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_MULTIPLE_DATABASES=rubytify_development,rubytify_test
+      - POSTGRES_USER=dbuser
+    ports:
+      - 5432:5432

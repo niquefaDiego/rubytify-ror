@@ -11,6 +11,23 @@ SPOTIFY_API_URL=https://api.spotify.com
 SPOTIFY_AUTH_ENDPOINT_URL=https://accounts.spotify.com/api/token
 ```
 
+## Local setup
+
+Postgres is required in the local setup, you can start it by running:
+
+```
+docker-compose up -d
+```
+
+
+You can explore the development and test databases as follows:
+
+```
+psql -h localhost -U dbuser -d rubytify_development
+psql -h localhost -U dbuser -d rubytify_test
+```
+
+
 ## Spotify integration
 
 
@@ -28,6 +45,8 @@ Spotify API aocumentation: https://developer.spotify.com/documentation/web-api/r
 - To upload the code create your own fork of this repo and start a pull request to this repo once you're done with your changes.
 
 
-## Comments
+# Deployment
 
-One could use this instead: https://github.com/guilhermesad/rspotify
+```
+git push heroku master
+```
