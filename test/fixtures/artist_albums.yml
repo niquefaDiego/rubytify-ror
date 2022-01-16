@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  artist: one
-  album: MyString
+artist1_album1:
+  artist: artist1
+  album: album1
 
-two:
-  artist: two
-  album: MyString
+artist1_album2:
+  artist: artist1
+  album: album2
+
+artist2_album3:
+  artist: artist2
+  album: album3
+
+artist2_album4:
+  artist: artist2
+  album: album4

@@ -1,17 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  image_url: MyText
-  genres: MyString
-  popularity: 1
-  spotify_url: MyText
-  spotify_id: MyString
+artist1:
+  name: BTS
+  image_url: https://i.scdn.co/image/ab6761610000e5eb82a5d58059f81867b871d8b6
+  popularity: 96
+  spotify_url: https://open.spotify.com/artist/3Nrfpe0tUJi4K4DXYWgMUX
+  spotify_id: 3Nrfpe0tUJi4K4DXYWgMUX
 
-two:
-  name: MyString
-  image_url: MyText
-  genres: MyString
-  popularity: 1
-  spotify_url: MyText
-  spotify_id: MyString
+artist2:
+  name: Arctic Monkeys
+  image_url: https://i.scdn.co/image/ab6761610000e5eb39f37a34b404169fdca52dc8
+  popularity: 87
+  spotify_url: https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH
+  spotify_id: 7Ln80lUS6He07XvHI8qqHH
