@@ -27,4 +27,4 @@
 /config/master.key
 
 # Environment variables
-.env
+/config/local_env.yml
