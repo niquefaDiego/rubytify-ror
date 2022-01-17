@@ -40,6 +40,21 @@ psql -h localhost -U dbuser -d rubytify_development
 psql -h localhost -U dbuser -d rubytify_test
 ```
 
+
+## Unit Testing
+
+Run normal tests:
+```
+bin/rails test
+```
+
+
+Run RSpec tests:
+
+```
+bundle exec rspec
+``
+
 ## Spotify integration
 
 
