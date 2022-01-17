@@ -14,6 +14,11 @@ RSpec.describe 'Random song for genre', type: :request do
 
   describe 'GET /api/v1/genres/:genre/random_song for a genre with no songs' do
     before { get '/api/v1/genres/joropo/random_song' }
+    it 'returns error message' do
+      expect(json).not_to be_empty
+      expect(json['message']).to eq('No songs for the given genre')
+      expect(json.size).to eq(1)
+    end
     it 'returns status code 404' do
       expect(response).to have_http_status(404)
     end
