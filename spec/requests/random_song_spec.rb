@@ -5,7 +5,7 @@ RSpec.describe 'Random song for genre', type: :request do
     before { get '/api/v1/genres/k-pop/random_song' }
     it 'returns a random snog' do
       # Only these 2 are kpop songs
-      expect(json['name'] == 'Intro : Persona' || json['name'] == 'Life Goes On').to be true
+      expect(json['data']['name'] == 'Intro : Persona' || json['data']['name'] == 'Life Goes On').to be true
     end
     it 'returns status code 200' do
       expect(response).to have_http_status(200)

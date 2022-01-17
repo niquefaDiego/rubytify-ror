@@ -36,7 +36,7 @@ module Api
         song = Album.find(album_id).songs.offset(random_track_index).
           select(:name, :spotify_url, :preview_url, :duration_ms, :explicit).take
 
-        render json: song.as_json(:except => :id)
+        render json: { data: song.as_json(:except => :id) }
       end
     end
   end

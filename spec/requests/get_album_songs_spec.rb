@@ -4,9 +4,9 @@ RSpec.describe 'Get album songs', type: :request do
   describe 'GET /api/v1/albums/:id/songs for valid album' do
     before { get '/api/v1/albums/6nYfHQnvkvOTNHnOhDT3sr/songs' }
     it 'returns songs' do
-      expect(json).not_to be_empty
-      expect(json[0]['name']).to eq('Life Goes On')
-      expect(json.size).to eq(1)
+      expect(json['data']).not_to be_empty
+      expect(json['data'][0]['name']).to eq('Life Goes On')
+      expect(json['data'].size).to eq(1)
     end
     it 'returns status code 200' do
       expect(response).to have_http_status(200)

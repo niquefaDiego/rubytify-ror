@@ -8,7 +8,7 @@ module Api
           return
         end
         songs = album.songs.all.select(:name, :spotify_url, :preview_url, :duration_ms, :explicit)
-        render json: songs.as_json(:except => :id)
+        render json: { data: songs.as_json(:except => :id) }
       end
     end
   end

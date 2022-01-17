@@ -13,7 +13,7 @@ module Api
             spotify_url: artist.spotify_url,
           }
         end
-        render json: all_artists
+        render json: { data: all_artists }
       end
 
       def list_albums
@@ -32,7 +32,7 @@ module Api
             total_tracks: album.total_tracks
           }
         end
-        render json: all_artist_albums
+        render json: { data: all_artist_albums }
       end
     end
   end
