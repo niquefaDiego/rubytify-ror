@@ -1,19 +1,35 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  album: one
-  name: MyString
-  spotify_url: MyText
-  preview_url: MyText
-  duration_ms: 1
+song1_from_album1:
+  album: album1
+  name: Life Goes On
+  spotify_url: https://open.spotify.com/track/5FVbvttjEvQ8r2BgUcJgNg
+  preview_url: https://p.scdn.co/mp3-preview/3c965d1d5a5e9c825ab656f8431d90058ac2c392?cid=b22fe5e352264b5180fe7105a787c408
+  duration_ms: 207481
   explicit: false
-  spotify_id: 
+  spotify_id: 5FVbvttjEvQ8r2BgUcJgNg
 
-two:
-  album: two
-  name: MyString
-  spotify_url: MyText
-  preview_url: MyText
-  duration_ms: 1
+song1_from_album2:
+  album: album2
+  name: "Intro : Persona"
+  spotify_url: https://open.spotify.com/track/2xKpEiPm7SWJTxUJgUI7Wg
+  preview_url: https://p.scdn.co/mp3-preview/8a0daddc400e5172fc44bd9b494c5d207ac62458?cid=b22fe5e352264b5180fe7105a787c408
+  duration_ms: 171023
   explicit: false
-  spotify_id: 
+  spotify_id: 2xKpEiPm7SWJTxUJgUI7Wg
+
+song1_from_album3:
+  album: album3
+  name: Four Out Of Five - Live
+  spotify_url: https://open.spotify.com/track/5dthj0uH1DJAbxC6B9n4Co
+  preview_url: https://p.scdn.co/mp3-preview/28e22b76f91dfbb1dc3a9e0d216fc48ed9192fbf?cid=b22fe5e352264b5180fe7105a787c408
+  duration_ms: 331520
+  explicit: false
+  spotify_id: 5dthj0uH1DJAbxC6B9n4Co
+
+song1_from_album4:
+  album: album4
+  name: Star Treatment
+  spotify_url: https://open.spotify.com/track/0FgNSsaSZTvbLXUumSO8LQ
+  preview_url: https://p.scdn.co/mp3-preview/96cf115e9813becf7d7d39f80fcc6a929666858f?cid=b22fe5e352264b5180fe7105a787c408
+  duration_ms: 354640
+  explicit: false
+  spotify_id: 0FgNSsaSZTvbLXUumSO8LQ

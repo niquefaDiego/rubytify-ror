@@ -1,29 +1,27 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 album1:
   name: BE
   image_url: https://i.scdn.co/image/ab67616d0000b273c07d5d2fdc02ae252fcd07e5
   spotify_url: https://open.spotify.com/album/6nYfHQnvkvOTNHnOhDT3sr
-  total_tracks: 8
+  total_tracks: 1
   spotify_id: 6nYfHQnvkvOTNHnOhDT3sr
 
 album2:
   name: MAP OF THE SOUL
   image_url: https://i.scdn.co/image/ab67616d0000b273a305c82beadd829638dd8c36
   spotify_url: https://open.spotify.com/album/4I1cAiu9Gko1xwJPZ4lViH
-  total_tracks: 20
+  total_tracks: 1
   spotify_id: 4I1cAiu9Gko1xwJPZ4lViH
 
 album3:
   name: Live at the Royal Albert Hall
   image_url: https://i.scdn.co/image/ab67616d0000b273753ff61c73b2861911ce590d
   spotify_url: https://open.spotify.com/album/7Heaa0B4KOxdWhSICTR2wE
-  total_tracks: 20
+  total_tracks: 1
   spotify_id: 7Heaa0B4KOxdWhSICTR2wE
 
 album4:
   name: Tranquility Base Hotel & Casino
   image_url: https://i.scdn.co/image/ab67616d0000b27329d0706875760373af2812f1
   spotify_url: https://open.spotify.com/album/1jeMiSeSnNS0Oys375qegp
-  total_tracks: 11
+  total_tracks: 1
   spotify_id: 1jeMiSeSnNS0Oys375qegp

@@ -53,7 +53,7 @@ Run RSpec tests:
 
 ```
 bundle exec rspec
-``
+```
 
 ## Spotify integration
 

@@ -1,9 +1,22 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# BTS genres
+artist1_genre1:
+  artist: artist1
+  genre: k-pop
+artist1_genre2:
+  artist: artist1
+  genre: k-pop boy group
 
-one:
-  artist: one
-  genre: MyString
 
-two:
-  artist: two
-  genre: MyString
+# Arctic Monkey's genres
+artist2_genre1:
+  artist: artist2
+  genre: garage rock
+artist2_genre2:
+  artist: artist2
+  genre: permanent wave
+artist2_genre3:
+  artist: artist2
+  genre: rock
+artist2_genre4:
+  artist: artist2
+  genre: sheffield indie

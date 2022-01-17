@@ -8,6 +8,11 @@ module Api
         # Find all of the album IDs and track count for all of
         # the artist of the given genre
         artist_genres = ArtistGenre.where(genre: genre)
+
+        if artist_genres.length == 0 then
+          render json: { message: "No song for given genre" }, status: 404
+          return
+        end
         total_tracks = 0
         albums = []
         accummulated_tracks = []
