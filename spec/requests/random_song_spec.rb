@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Random song for genre', type: :request do
+  fixtures :artists, :albums, :artist_albums, :artist_genres, :songs
   describe 'GET /api/v1/genres/:genre/random_song for valid genre' do
     before { get '/api/v1/genres/k-pop/random_song' }
     it 'returns a random snog' do

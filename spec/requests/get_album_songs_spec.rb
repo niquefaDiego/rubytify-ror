@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Get album songs', type: :request do
+  fixtures :albums, :songs
   describe 'GET /api/v1/albums/:id/songs for valid album' do
     before { get '/api/v1/albums/6nYfHQnvkvOTNHnOhDT3sr/songs' }
     it 'returns songs' do

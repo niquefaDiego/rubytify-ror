@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'List artists', type: :request do
+  fixtures :artists
+
   describe 'GET /api/v1/artists' do
     before { get '/api/v1/artists' }
     it 'returns artists' do
