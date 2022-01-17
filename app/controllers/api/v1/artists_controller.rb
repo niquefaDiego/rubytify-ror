@@ -18,6 +18,10 @@ module Api
 
       def list_albums
         artist = Artist.find_by spotify_id: params[:id]
+        if artist == nil then
+          render json: { message: "Artist not found" }, status: :not_found
+          return
+        end
         all_artist_albums = artist.albums.all.select(:spotify_id, :name, :image_url, :spotify_url, :total_tracks)
         all_artist_albums = all_artist_albums.map do |album|
           {

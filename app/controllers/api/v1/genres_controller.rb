@@ -10,7 +10,7 @@ module Api
         artist_genres = ArtistGenre.where(genre: genre)
 
         if artist_genres.length == 0 then
-          render json: { message: "No song for given genre" }, status: 404
+          render json: { message: "No song for given genre" }, status: :not_found
           return
         end
         total_tracks = 0
